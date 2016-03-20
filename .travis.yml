@@ -10,9 +10,9 @@ addons:
       - php5-curl
 
 install:
-  - pip install ansible --upgrade
-  - ansible-galaxy install carlosbuenosvinos.ansistrano-deploy --force
+  - "pip install ansible --upgrade"
+  - "ANSIBLE_CONFIG=tests/ansible.cfg ansible-galaxy install carlosbuenosvinos.ansistrano-deploy --force"
 
 script:
-  - "ansible-playbook -i tests/inventory tests/test.yml --syntax-check"
-  - "ansible-playbook -i tests/inventory tests/test.yml"
+  - "ANSIBLE_CONFIG=tests/ansible.cfg ansible-playbook -i tests/inventory tests/test.yml --syntax-check"
+  - "ANSIBLE_CONFIG=tests/ansible.cfg ansible-playbook -i tests/inventory tests/test.yml"
