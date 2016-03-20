@@ -13,9 +13,8 @@ addons:
 
 install:
   - "pip install ansible --upgrade"
-  - "ANSIBLE_CONFIG=tests/ansible.cfg ansible-galaxy install carlosbuenosvinos.ansistrano-deploy --force"
-  - "ln -s `pwd` ../kpeu3i.ansifony"
+  - "ansible-galaxy install carlosbuenosvinos.ansistrano-deploy --force"
 
 script:
-  - "ANSIBLE_CONFIG=tests/ansible.cfg ansible-playbook -i tests/inventory tests/test.yml --syntax-check"
-  - "ANSIBLE_CONFIG=tests/ansible.cfg ansible-playbook -i tests/inventory tests/test.yml"
+  - "ansible-playbook -i tests/inventory tests/test.yml --syntax-check"
+  - "ansible-playbook -i tests/inventory tests/test.yml"
