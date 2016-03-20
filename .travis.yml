@@ -13,7 +13,7 @@ addons:
 
 install:
   - "pip install ansible --upgrade"
-  - "ansible-galaxy install carlosbuenosvinos.ansistrano-deploy --force"
+  - "sudo ansible-galaxy install carlosbuenosvinos.ansistrano-deploy --force"
 
 script:
   - "ansible-playbook -i tests/inventory tests/test.yml --syntax-check"
