@@ -1,0 +1,2 @@
+---
+ansistrano_after_symlink_shared_tasks_file: "{{ ansifony_tasks_path }}/after_symlink_shared.yml"

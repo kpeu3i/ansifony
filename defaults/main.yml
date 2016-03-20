@@ -1,0 +1,27 @@
+---
+ansifony_tasks_path: "../../kpeu3i.ansifony/tasks"
+
+ansifony_remote_user: "root"
+ansifony_deploy_user: "www-data"
+
+ansifony_php_path: "php"
+
+ansifony_symfony_env: prod
+ansifony_symfony_console_command: "app/console"
+
+ansifony_use_composer: True
+ansifony_composer_path: "/usr/local/bin/composer.phar"
+ansifony_composer_install_options: "--no-dev --optimize-autoloader --no-interaction"
+
+ansifony_assets_install: True
+
+ansifony_assetic_dump: False
+
+ansifony_migrations_migrate: False
+
+ansifony_cache_clear: True
+ansifony_cache_warmup: True
+
+ansifony_nginx_restart: True
+
+ansifony_php5_fpm_restart: True

@@ -1,0 +1,10 @@
+- include: "{{ ansifony_tasks_path }}/steps/composer.yml"
+  when: ansifony_use_composer
+
+- include: "{{ ansifony_tasks_path }}/steps/assets.yml"
+
+- include: "{{ ansifony_tasks_path }}/steps/cache.yml"
+
+- include: "{{ ansifony_tasks_path }}/steps/doctrine.yml"
+
+- include: "{{ ansifony_tasks_path }}/steps/services.yml"

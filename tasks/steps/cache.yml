@@ -1,0 +1,9 @@
+- name: "Cache: clear"
+  shell: chdir={{ ansistrano_release_path.stdout }}
+    export SYMFONY_ENV={{ ansifony_symfony_env }} && {{ ansifony_php_path }} {{ ansifony_symfony_console_command }} cache:clear --no-warmup --no-debug
+  when: ansifony_cache_clear
+
+- name: "Cache: warmup"
+  shell: chdir={{ ansistrano_release_path.stdout }}
+    export SYMFONY_ENV={{ ansifony_symfony_env }} && {{ ansifony_php_path }} {{ ansifony_symfony_console_command }} cache:warmup --no-debug
+  when: ansifony_cache_warmup
