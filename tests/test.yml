@@ -2,7 +2,7 @@
 - hosts: localhost
   gather_facts: false
   roles:
-    - { role: ../../kpeu3i.ansifony }
+    - { role: ../kpeu3i.ansifony }
 
   vars:
     ansistrano_deploy_to: /tmp/test_app
