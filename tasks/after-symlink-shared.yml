@@ -6,5 +6,3 @@
 - include: "{{ ansifony_tasks_path }}/steps/cache.yml"
 
 - include: "{{ ansifony_tasks_path }}/steps/doctrine.yml"
-
-- include: "{{ ansifony_tasks_path }}/steps/services.yml"
