@@ -1,11 +1,11 @@
 - name: "ANSIFONY | Cache: clear"
   shell: "export SYMFONY_ENV={{ ansifony_symfony_env }} && {{ ansifony_php_path }} {{ ansifony_symfony_console_command }} cache:clear --no-warmup --no-debug"
   args:
-    chdir: {{ ansistrano_release_path.stdout }}
+    chdir: "{{ ansistrano_release_path.stdout }}"
   when: ansifony_cache_clear
 
 - name: "ANSIFONY | Cache: warmup"
   shell: "export SYMFONY_ENV={{ ansifony_symfony_env }} && {{ ansifony_php_path }} {{ ansifony_symfony_console_command }} cache:warmup --no-debug"
   args:
-    chdir: {{ ansistrano_release_path.stdout }}
+    chdir: "{{ ansistrano_release_path.stdout }}"
   when: ansifony_cache_warmup

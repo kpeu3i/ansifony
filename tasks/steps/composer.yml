@@ -20,4 +20,4 @@
 - name: "ANSIFONY | Composer: install dependecies"
   shell: "export SYMFONY_ENV={{ ansifony_symfony_env }} && {{ ansifony_php_path }} composer install {{ ansifony_composer_install_options }}"
   args:
-    chdir: {{ ansistrano_release_path.stdout }}
+    chdir: "{{ ansistrano_release_path.stdout }}"
