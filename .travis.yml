@@ -13,7 +13,7 @@ addons:
 
 install:
   - "pip install ansible --upgrade"
-  - "ANSIBLE_CONFIG=tests/ansible.cfg ansible-galaxy carlosbuenosvinos.ansistrano-deploy carlosbuenosvinos.ansistrano-rollback --force"
+  - "ANSIBLE_CONFIG=tests/ansible.cfg ansible-galaxy install --force carlosbuenosvinos.ansistrano-deploy carlosbuenosvinos.ansistrano-rollback"
   - "ln -s `pwd` ../kpeu3i.ansifony"
 
 script:
