@@ -1,10 +1,12 @@
 ---
-- name: "Assests: symlink/install assets"
-  shell: chdir={{ ansistrano_release_path.stdout }}
-    export SYMFONY_ENV={{ ansifony_symfony_env }} && {{ ansifony_php_path }} {{ ansifony_symfony_console_command }} assets:install --symlink --no-debug
+- name: "ANSIFONY | Assests: symlink/install assets"
+  shell: "export SYMFONY_ENV={{ ansifony_symfony_env }} && {{ ansifony_php_path }} {{ ansifony_symfony_console_command }} assets:install --symlink --no-debug"
+  args:
+    chdir: {{ ansistrano_release_path.stdout }}
   when: ansifony_assets_install
 
-- name: "Assests: dump"
-  shell: chdir={{ ansistrano_release_path.stdout }}
-    export SYMFONY_ENV={{ ansifony_symfony_env }} && {{ ansifony_php_path }} {{ ansifony_symfony_console_command }} assetic:dump --no-debug
+- name: "ANSIFONY | Assests: dump"
+  shell: "export SYMFONY_ENV={{ ansifony_symfony_env }} && {{ ansifony_php_path }} {{ ansifony_symfony_console_command }} assetic:dump --no-debug"
+  args:
+    chdir: {{ ansistrano_release_path.stdout }}
   when: ansifony_assetic_dump

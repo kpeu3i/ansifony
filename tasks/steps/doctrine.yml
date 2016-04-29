@@ -1,5 +1,6 @@
 ---
-- name: "Migrations: migrate"
-  shell: chdir={{ ansistrano_release_path.stdout }}
-    export SYMFONY_ENV={{ ansifony_symfony_env }} && {{ ansifony_php_path }} {{ ansifony_symfony_console_command }} doctrine:migrations:migrate -n
+- name: "ANSIFONY | Migrations: migrate"
+  shell: "export SYMFONY_ENV={{ ansifony_symfony_env }} && {{ ansifony_php_path }} {{ ansifony_symfony_console_command }} doctrine:migrations:migrate -n"
+  args:
+    chdir: {{ ansistrano_release_path.stdout }}
   when: ansifony_migrations_migrate

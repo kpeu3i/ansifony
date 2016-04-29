@@ -1,21 +1,23 @@
 ---
-- name: "Composer: check if exists"
+- name: "ANSIFONY | Composer: check if exists"
   stat: path={{ ansifony_composer_path }}
   register: ansifony_composer_file
 
-- name: "Composer: self install"
-  sudo: yes
-  sudo_user: "{{ ansifony_remote_user }}"
+- name: "ANSIFONY | Composer: self install"
+  become: yes
+  become_method: sudo
+  become_user: "{{ ansifony_remote_user }}"
   get_url: url=https://getcomposer.org/composer.phar dest={{ ansifony_composer_path }} mode=0755 validate_certs=no
   when: ansifony_composer_file.stat.exists == False
 
-- name: "Composer: self update"
+- name: "ANSIFONY | Composer: self update"
   shell: "{{ ansifony_composer_path }} self-update"
   when: ansifony_composer_file.stat.exists
 
-- name: "Composer: link composer to release dir"
+- name: "ANSIFONY | Composer: link composer to release dir"
   file: state=link src={{ ansifony_composer_path }} path={{ ansistrano_release_path.stdout }}/composer
 
-- name: "Composer: install dependecies"
-  shell: chdir={{ ansistrano_release_path.stdout }}
-    export SYMFONY_ENV={{ ansifony_symfony_env }} && {{ ansifony_php_path }} composer install {{ ansifony_composer_install_options }}
+- name: "ANSIFONY | Composer: install dependecies"
+  shell: "export SYMFONY_ENV={{ ansifony_symfony_env }} && {{ ansifony_php_path }} composer install {{ ansifony_composer_install_options }}"
+  args:
+    chdir: {{ ansistrano_release_path.stdout }}
