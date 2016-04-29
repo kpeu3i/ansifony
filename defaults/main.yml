@@ -1,5 +1,5 @@
 ---
-ansifony_tasks_path: "../../kpeu3i.ansifony/tasks"
+ansifony_tasks_path: "../../kpeu3i.ansifony-deploy/tasks"
 
 ansifony_remote_user: "root"
 ansifony_deploy_user: "www-data"
