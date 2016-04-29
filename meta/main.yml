@@ -1,7 +1,6 @@
 ---
 dependencies:
   - { role: carlosbuenosvinos.ansistrano-deploy }
-  - { role: carlosbuenosvinos.ansistrano-rollback }
 
 galaxy_info:
   author: Andrey Bukatov
